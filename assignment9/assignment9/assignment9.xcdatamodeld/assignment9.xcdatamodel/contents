@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="9057" systemVersion="15B42" minimumToolsVersion="Automatic">
+    <entity name="ItemCD" representedClassName="ItemCD" syncable="YES">
+        <attribute name="itemDescription" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="itemId" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <attribute name="itemImageData" optional="YES" attributeType="Binary" syncable="YES"/>
+        <attribute name="itemName" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="itemPrice" optional="YES" attributeType="Double" defaultValueString="0.0" syncable="YES"/>
+        <attribute name="itemQuantity" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <attribute name="itemSellByDate" optional="YES" attributeType="Date" syncable="YES"/>
+        <relationship name="associatedStore" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="StoreCD" inverseName="associatedItem" inverseEntity="StoreCD" syncable="YES"/>
+    </entity>
+    <entity name="StoreCD" representedClassName="StoreCD" syncable="YES">
+        <attribute name="storeAddress" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="storeName" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="storeTelephone" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <attribute name="storeZip" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <relationship name="associatedItem" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="ItemCD" inverseName="associatedStore" inverseEntity="ItemCD" syncable="YES"/>
+    </entity>
+    <elements>
+        <element name="ItemCD" positionX="-63" positionY="-18" width="128" height="165"/>
+        <element name="StoreCD" positionX="-54" positionY="-9" width="128" height="120"/>
+    </elements>
+</model>
